@@ -4,7 +4,7 @@
   home.username = "marques";
   home.homeDirectory = "/home/marques";
   
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   imports = [
    #./git.nix
