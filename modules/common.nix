@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+
+  nixpkgs.overlays = [
+    inputs.firefox-addons.overlays.default
+  ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   
