@@ -43,8 +43,11 @@
     pulse.enable = true;
   };
 
+  programs.zsh.enable = true;
+
   users.users.marques = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "Guilherme Marques";
     extraGroups = [ "networkmanager" "wheel" ];
   };

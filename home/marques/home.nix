@@ -10,6 +10,7 @@
    #./git.nix
    #../../modules/home-manager/dev/git.nix
    inputs.zen-browser.homeModules.default
+   ../../modules/home-manager/terminal
    ../../modules/home-manager/theming/gtk.nix
    ../../modules/home-manager/essentials.nix
    ../../modules/home-manager/dev
