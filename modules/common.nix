@@ -55,6 +55,7 @@
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [ git ];
-
   system.stateVersion = "25.11";
+  age.identityPaths = [ "/home/marques/.ssh/id_ed25519" ];
+  age.secrets.teste.file = ../secrets/teste.age;
 }

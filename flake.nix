@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  
+      
     home-manager = {
 	url = "github:nix-community/home-manager";
 	inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +23,11 @@
 	url = "github:Gerg-L/spicetify-nix";
 	inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix = {
+	url = "github:ryantm/agenix";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -33,6 +38,7 @@
 	  specialArgs = { inherit inputs; };
 	  modules = [
 	    ./hosts/nixos/configuration.nix
+	    inputs.agenix.nixosModules.default
 	    home-manager.nixosModules.home-manager {
 		home-manager.useGlobalPkgs = true;
 		home-manager.useUserPackages = true;
@@ -46,6 +52,7 @@
 	  specialArgs = { inherit inputs; };
 	  modules = [
 	    ./hosts/laptop/configuration.nix
+	    inputs.agenix.nixosModules.default
 	    home-manager.nixosModules.home-manager {
 		home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
