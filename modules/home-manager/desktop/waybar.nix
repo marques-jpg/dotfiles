@@ -4,11 +4,13 @@
   # Precisamos de instalar o motor do equalizador de som
   home.packages = with pkgs; [
     cava
+    dejavu_fonts
   ];
 
   programs.waybar = {
     enable = true;
-    
+    systemd.enable = true;    
+
     settings = {
       mainBar = {
         layer = "top";
@@ -135,7 +137,9 @@
       /* Estilo para as barras de som coladas ao nome da app */
       #cava {
         color: #ae81ff; /* Roxo brilhante Moonfly */
-        padding-left: 0; 
+        padding-left: 0;
+	font-family: "DejaVu Sans Mono";
+        font-size: 14px; 
       }
 
       #clock {
