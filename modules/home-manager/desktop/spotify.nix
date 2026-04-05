@@ -9,7 +9,7 @@ in
   programs.spicetify = {
     enable = true;
     
-    theme = spicePkgs.themes.sleek;
+    theme = spicePkgs.themes.text;
     
     enabledExtensions = with spicePkgs.extensions; [
       adblock

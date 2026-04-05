@@ -10,6 +10,8 @@
    #./git.nix
    #../../modules/home-manager/dev/git.nix
    inputs.zen-browser.homeModules.default
+   ../../modules/home-manager/desktop/waybar.nix
+   ../../modules/home-manager/desktop/hyprland.nix
    ../../modules/home-manager/desktop/spotify.nix
    ../../modules/home-manager/terminal
    ../../modules/home-manager/theming/gtk.nix

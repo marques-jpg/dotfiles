@@ -1,0 +1,97 @@
+{ pkgs, ... }:
+
+{
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    
+    settings = {
+      "exec-once" = [
+        "hyprctl setcursor Adwaita 24"
+      ];
+      "$mod" = "SUPER";
+
+      "$terminal" = "kitty";
+      "$menu" = "wofi --show drun";
+
+      input = {
+        kb_layout = "pt";
+        
+        follow_mouse = 1;
+
+        touchpad = {
+          natural_scroll = true; # Inverte o scroll para o comportamento moderno
+        };
+
+        sensitivity = 0;        # Sensibilidade do rato (0 = padrão, podes ajustar entre -1.0 e 1.0)
+      };
+
+      bind = [
+        "$mod, Return, exec, $terminal"
+        "$mod, Q, killactive,"         
+        "$mod SHIFT, M, exit,"         
+        "$mod, Space, exec, $menu"     
+        "$mod, V, togglefloating,"     
+        "$mod, F, fullscreen,"         
+        
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+	"$mod, 5, workspace, 5"
+	"$mod, 6, workspace, 6"
+	"$mod, 7, workspace, 7"
+	"$mod, 8, workspace, 8"        
+	"$mod, 9, workspace, 9"
+	"$mod, 0, workspace, 0"
+
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+      ];
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 10;
+        border_size = 2;
+        "col.active_border" = "rgba(7aa2f7aa) rgba(7dcffffa) 45deg";
+        "col.inactive_border" = "rgba(414868aa)";
+        layout = "dwindle";
+      };
+
+      decoration = {
+        rounding = 10;
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+        };
+      };
+      
+      animations = {
+        enabled = true;
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        animation = [
+          "windows, 1, 4, myBezier"
+          "windowsOut, 1, 4, default, popin 80%"
+          "border, 1, 5, default"
+          "fade, 1, 4, default"
+          "workspaces, 1, 3, default"
+        ];
+      };
+    };
+  };
+}

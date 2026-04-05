@@ -53,10 +53,17 @@
   };
 
   programs.firefox.enable = true;
+  programs.hyprland.enable = true;
+  security.pam.services.swaylock = {};
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [ 
     wofi
-    git 
+    stremio-linux-shell
+    git
+    vesktop 
   ];
   system.stateVersion = "25.11";
   age.identityPaths = [ "/home/marques/.ssh/id_ed25519" ];

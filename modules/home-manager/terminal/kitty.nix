@@ -21,33 +21,32 @@
       window_padding_width = 10;
       confirm_os_window_close = 0;
     };
-
     extraConfig = ''
-      background #1a1b26
-      foreground #c0caf5
-      selection_background #283457
-      selection_foreground #c0caf5
-      url_color #73daca
-      cursor #c0caf5
-      cursor_text_color #1a1b26
+      background #080808
+      foreground #bdbdbd
+      selection_background #b0b0b0
+      selection_foreground #080808
+      cursor #9e9e9e
+      cursor_text_color #080808
       
-      color0 #15161e
-      color1 #f7768e
-      color2 #9ece6a
-      color3 #e0af68
-      color4 #7aa2f7
-      color5 #bb9af7
-      color6 #7dcfff
-      color7 #a9b1d6
+      # cores Moonfly
+      color0 #323437
+      color1 #ff5454
+      color2 #8cc85f
+      color3 #e3c78a
+      color4 #80a0ff
+      color5 #cf87e8
+      color6 #79dac8
+      color7 #c6c6c6
       
-      color8 #414868
-      color9 #f7768e
-      color10 #9ece6a
-      color11 #e0af68
-      color12 #7aa2f7
-      color13 #bb9af7
-      color14 #7dcfff
-      color15 #c0caf5
+      color8 #373c40
+      color9 #ff5189
+      color10 #36c692
+      color11 #c2c292
+      color12 #74b2ff
+      color13 #ae81ff
+      color14 #85dc85
+      color15 #e4e4e4
     '';
   };
 }

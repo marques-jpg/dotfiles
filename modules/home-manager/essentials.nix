@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    discord
+    #discord
     libreoffice
     mattermost-desktop
   ];
