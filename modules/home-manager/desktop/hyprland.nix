@@ -27,7 +27,7 @@
       line-color = "00000000";    # Remove as linhas de separação (transparente)
       separator-color = "00000000"; 
       
-      key-hl-color = "80a0ff";    # O azul vibrante do Moonfly quando carregas nas teclas
+      key-hl-color = "c99d46";    # O azul vibrante do Moonfly quando carregas nas teclas
       ring-ver-color = "8cc85f";  # Verde quando está a verificar a password
       ring-wrong-color = "ff5454";# Vermelho quando te enganas
       text-color = "e4e4e4";      # Texto a branco
