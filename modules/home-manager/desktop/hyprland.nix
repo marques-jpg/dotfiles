@@ -42,12 +42,20 @@
       "$terminal" = "kitty";
       "$menu" = "\wofi --show drun -I";
 
+      env = [
+        "GTK_THEME,Adwaita:dark"
+      ];
+
       "exec-once" = [
         "hyprctl setcursor Adwaita 24"
         "blueman-applet"                         # Ícone do Bluetooth em segundo plano
         "swaybg -i ~/.wallpaper.jpg -m fill"     # Motor de wallpaper
-        "waybar"
-	"swayidle -w before-sleep 'swaylock -f -c 080808'"
+        "bash -c 'sleep 2 && waybar'"
+	"waybar"
+	"bash -c 'pkill waybar; sleep 2; waybar'"
+	#"swayidle -w before-sleep 'swaylock -f -c 080808'"
+        "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+        "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
       ];
 
       input = {
