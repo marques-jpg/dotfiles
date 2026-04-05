@@ -21,7 +21,7 @@
         # A Nova Estrutura: Som colado à janela e Relógio no centro
         modules-left = [ "custom/nixos" "hyprland/workspaces" "hyprland/window" "cava" ];
         modules-center = [ "clock" ];
-        modules-right = [ "mpris" "cpu" "memory" "battery" "tray" ];
+        modules-right = [ "mpris" "pulseaudio" "backlight" "cpu" "memory" "battery" "tray" ];
 
         "custom/nixos" = {
           format = "  ";
@@ -84,6 +84,16 @@
           format-charging = "CHG {capacity}%";
         };
 
+        "pulseaudio" = {
+          format = "VOL {volume}%";
+          format-muted = "VOL MUTED";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; # Clicar na barra muta o som!
+        };
+
+        "backlight" = {
+          format = "LUM {percent}%";
+        };
+
         "tray" = {
           spacing = 10;
         };
@@ -104,7 +114,7 @@
         color: #bdbdbd;
       }
 
-      #custom-nixos, #workspaces, #window, #cava, #mpris, #clock, #cpu, #memory, #battery, #tray {
+      #custom-nixos, #workspaces, #window, #cava, #mpris, #clock, #cpu, #memory, #pulseaudio, #backlight,  #battery, #tray {
         background-color: transparent;
         padding: 0 7px;
       }

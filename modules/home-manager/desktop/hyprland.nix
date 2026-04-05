@@ -16,6 +16,7 @@
     swaybg        # O motor ultraleve para gerir o wallpaper
     #swaylock
     swayidle
+    brightnessctl
   ];
 
   programs.swaylock = {
@@ -53,7 +54,7 @@
         #"bash -c 'sleep 2 && waybar'"
 	#"waybar"
 	#"bash -c 'pkill waybar; sleep 2; waybar'"
-	#"swayidle -w before-sleep 'swaylock -f -c 080808'"
+	"swayidle -w before-sleep 'swaylock -f -c 080808'"
         "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
         "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'"
       ];
@@ -117,6 +118,9 @@
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+
       ];
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
