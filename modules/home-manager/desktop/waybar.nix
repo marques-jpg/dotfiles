@@ -24,7 +24,7 @@
         modules-right = [ "mpris" "cpu" "memory" "battery" "tray" ];
 
         "custom/nixos" = {
-          format = " ";
+          format = "  ";
           tooltip = false;
         };
 
@@ -52,6 +52,7 @@
           autosens = 1;
           bars = 10;
           method = "pipewire";
+	  bar_delimiter = 0;
           format-icons = [ " " "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
         };
 
@@ -118,7 +119,7 @@
       }
 
       #workspaces button.active {
-        color: #80a0ff; /* Azul para a ativa */
+        color: #c99d46; /* Azul para a ativa */
       }
 
       #workspaces button:hover {
@@ -136,7 +137,7 @@
 
       /* Estilo para as barras de som coladas ao nome da app */
       #cava {
-        color: #ae81ff; /* Roxo brilhante Moonfly */
+        color: #c99d46; /* Roxo brilhante Moonfly */
         padding-left: 0;
 	font-family: "DejaVu Sans Mono";
         font-size: 14px; 
