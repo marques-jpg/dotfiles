@@ -62,9 +62,8 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [ 
     wofi
-    stremio-linux-shell
     git
-    vesktop 
+    vesktop
   ];
   system.stateVersion = "25.11";
   age.identityPaths = [ "/home/marques/.ssh/id_ed25519" ];
