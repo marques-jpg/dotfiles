@@ -10,7 +10,12 @@
   
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+  #boot.kernelParams = [ "snd_rn_pci_acp3x.dmic_acpi_check=1" ];
+  boot.kernelParams = [ 
+    "snd_rn_pci_acp3x.dmic_acpi_check=1" 
+    "snd_pci_acp6x.dmic_acpi_check=1" 
+  ];  
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Lisbon";
@@ -49,21 +54,33 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Guilherme Marques";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
 
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
   security.pam.services.swaylock = {};
   programs.dconf.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  #hardware.bluetooth.enable = true;
+  hardware.enableAllFirmware = true;
+  #hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };  
   services.blueman.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [ 
     wofi
     git
     vesktop
+    pavucontrol
   ];
   system.stateVersion = "25.11";
   age.identityPaths = [ "/home/marques/.ssh/id_ed25519" ];
@@ -72,4 +89,16 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
+
+  services.pipewire.wireplumber.extraConfig = {
+    "10-bluetooth-policy" = {
+      "monitor.bluez.properties" = {
+        "bluez5.enable-sbc-xq" = true;
+        "bluez5.enable-msbc" = true;
+        "bluez5.enable-hw-volume" = true;
+	"bluez5.autoswitch-profile" = false;
+        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "headset_head_unit" "headset_audio_gateway" ];
+      };
+    };
+  };
 }

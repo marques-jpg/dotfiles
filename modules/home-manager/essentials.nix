@@ -7,5 +7,6 @@
     mattermost-desktop
     wasistlos
     stremio-linux-shell
+    arduino-ide
   ];
 }
