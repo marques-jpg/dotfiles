@@ -48,13 +48,15 @@
     pulse.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+
   programs.zsh.enable = true;
 
   users.users.marques = {
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Guilherme Marques";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
   };
 
   programs.firefox.enable = true;
