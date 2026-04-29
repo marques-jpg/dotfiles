@@ -15,6 +15,7 @@
       bradlc.vscode-tailwindcss
       dbaeumer.vscode-eslint
       esbenp.prettier-vscode
+      tomoki1207.pdf
     ];
   };
   programs.neovim = {
@@ -24,11 +25,11 @@
     vimAlias = true;
     
     extraPackages = with pkgs; [
-      gcc      # Necessário para compilar as árvores de sintaxe (Treesitter)
-      ripgrep  # O motor de pesquisa de texto mais rápido do mundo
-      fd       # Alternativa super rápida ao comando 'find'
-      lazygit  # Interface espetacular para o Git dentro do Neovim
-      unzip    # Necessário para extrair alguns servidores de linguagem
+      gcc
+      ripgrep
+      fd     
+      lazygit
+      unzip  
       wget
     ];
   };
