@@ -39,6 +39,17 @@
     enable = true;
     
     settings = {
+
+      cursor = {
+        no_hardware_cursors = true;
+      };
+
+      monitor = [
+        "HDMI-A-1, 1366x768@59.79, 0x0, 1, transform, 1"
+        "DP-1, 1920x1080@180, 768x0, 1"
+	",preferred,auto,1"
+      ];
+
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "\wofi --show drun -I";

@@ -11,5 +11,7 @@
       ../../modules/common.nix
     ];
 
+  boot.kernelParams = [ "video=HDMI-A-1:1366x768@59.79" ];
   networking.hostName = "nixos";
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 }
