@@ -77,6 +77,7 @@
 
         "battery" = {
           states = {
+	    top = 100;
             warning = 30;
             critical = 15;
           };
@@ -161,6 +162,7 @@
       #mpris { color: #8cc85f; }
       #battery.warning { color: #e3c78a; }
       #battery.critical { color: #ff5454; }
+      #battery.top { color: #98fb98; }
     '';
   };
 }

@@ -15,6 +15,12 @@
     };
 
     extraConfig = {
+      sendemail = {
+        smtpserver = "smtp.gmail.com";
+        smtpserverport = 587;
+        smtpencryption = "tls";
+        smtpuser = "gfelicianomarques@gmail.com";
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       
