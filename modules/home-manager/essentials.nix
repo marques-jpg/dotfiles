@@ -8,6 +8,6 @@
     wasistlos
     stremio-linux-shell
     arduino-ide
-    bruno
+    obsidian
   ];
 }

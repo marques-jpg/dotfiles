@@ -6,6 +6,8 @@
 
     antigravity.url = "github:jacopone/antigravity-nix";      
 
+    nur.url = "github:nix-community/NUR";
+
     home-manager = {
 	url = "github:nix-community/home-manager";
 	inputs.nixpkgs.follows = "nixpkgs";
