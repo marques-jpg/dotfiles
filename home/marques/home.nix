@@ -25,6 +25,7 @@
     #zen-browser
     #spotify
     htop
+    inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
   ];
   
   programs.home-manager.enable = true;
