@@ -27,6 +27,7 @@
     htop
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
   ];
-  
+
+  home.file.".gemini/config/plugins/ponytail".source = inputs.ponytail;  
   programs.home-manager.enable = true;
 }

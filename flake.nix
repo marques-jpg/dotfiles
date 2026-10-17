@@ -6,6 +6,11 @@
 
     antigravity.url = "github:jacopone/antigravity-nix";      
 
+    ponytail = {
+      url = "github:DietrichGebert/ponytail";
+      flake = false;
+    };
+
     nur.url = "github:nix-community/NUR";
 
     home-manager = {

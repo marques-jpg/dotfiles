@@ -271,6 +271,22 @@
         "type": "github"
       }
     },
+    "ponytail": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792156819,
+        "narHash": "sha256-BkYqsoE8G0JmXZ0lv1lM8CsmV7FvAqUyKnH3NPQkjaE=",
+        "owner": "DietrichGebert",
+        "repo": "ponytail",
+        "rev": "6f1c2bfff0c837d268929a7c4e490918eb4fab29",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DietrichGebert",
+        "repo": "ponytail",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -279,6 +295,7 @@
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
+        "ponytail": "ponytail",
         "spicetify-nix": "spicetify-nix",
         "zen-browser": "zen-browser"
       }
